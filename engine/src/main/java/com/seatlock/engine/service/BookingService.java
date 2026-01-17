@@ -20,22 +20,19 @@ public class BookingService {
         this.eventRepository = eventRepository;
     }
 
-    @Transactional // This ensures "All or Nothing" (Safety Lock)
+    @Transactional
     public Booking bookTicket(Long eventId, String userEmail, int seatsToBook) {
-        // 1. Find the Event
+
         Event event = eventRepository.findById(eventId)
                 .orElseThrow(() -> new RuntimeException("Event not found!"));
 
-        // 2. Check Availability (The Gatekeeper)
         if (event.getTotalSeats() < seatsToBook) {
             throw new RuntimeException("SOLD OUT! Not enough seats available.");
         }
 
-        // 3. Update the Inventory (Decrease Seat Count)
         event.setTotalSeats(event.getTotalSeats() - seatsToBook);
         eventRepository.save(event);
 
-        // 4. Create the Booking Receipt
         Booking booking = new Booking();
         booking.setEventId(eventId);
         booking.setUserEmail(userEmail);

@@ -14,9 +14,9 @@ public class Booking {
     private Long eventId; // Which concert?
     private String userEmail; // Who bought it?
     private Integer seatsBooked; // How many tickets?
-    private LocalDateTime bookingTime; // When?
+    private LocalDateTime bookingTime;
 
-    // --- MANUAL GETTERS AND SETTERS (Safety Mode) ---
+
 
     public Long getId() {
         return id;

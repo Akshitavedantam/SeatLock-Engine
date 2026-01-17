@@ -36,6 +36,6 @@ Content-Type: application/json
 
 {
   "eventId": 1,
-  "userEmail": "rahul.verma@example.com",
+  "userEmail": "akshita.vedantam  @example.com",
   "seats": 2
 }
