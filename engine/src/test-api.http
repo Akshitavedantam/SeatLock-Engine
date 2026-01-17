@@ -1,0 +1,41 @@
+### 1. Concert (Real Indian Context)
+POST http://localhost:9090/events
+Content-Type: application/json
+
+{
+  "title": "Arijit Singh Live - Soul India Tour",
+  "location": "Gachibowli Indoor Stadium, Hyderabad",
+  "eventDate": "2026-08-15T19:00:00+05:30",
+  "totalSeats": 5000
+}
+
+### 2. Tech Event (Student Context)
+POST http://localhost:9090/events
+Content-Type: application/json
+
+{
+  "title": "AI & ML Workshop @ T-Hub",
+  "location": "T-Hub Phase 2, Raidurg",
+  "eventDate": "2026-02-20T10:00:00+05:30",
+  "totalSeats": 150
+}
+
+### 3. Movie Premiere (Mass Interest)
+POST http://localhost:9090/events
+Content-Type: application/json
+
+{
+  "title": "SS Rajamouli's Next - Benefit Show",
+  "location": "Prasads Multiplex (Large Screen)",
+  "eventDate": "2026-01-26T04:00:00+05:30",
+  "totalSeats": 600
+}
+### 4. Book a Ticket for Arijit Singh (User: Rahul)
+POST http://localhost:9090/bookings
+Content-Type: application/json
+
+{
+  "eventId": 1,
+  "userEmail": "rahul.verma@example.com",
+  "seats": 2
+}

@@ -1,10 +1,8 @@
 package com.seatlock.engine.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import java.time.ZonedDateTime;
 
-@Data
 @Entity
 @Table(name = "events")
 public class Event {
@@ -13,16 +11,50 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
-    @Column(nullable = false)
     private String title;
-
-
     private String location;
-
-
-    @Column(nullable = false, name = "event_date")
     private ZonedDateTime eventDate;
-    @Column(nullable = false, name = "total_seats")
     private Integer totalSeats;
+
+    // --- GETTERS AND SETTERS (The Manual Way) ---
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public ZonedDateTime getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(ZonedDateTime eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    public Integer getTotalSeats() {
+        return totalSeats;
+    }
+
+    public void setTotalSeats(Integer totalSeats) {
+        this.totalSeats = totalSeats;
+    }
 }
